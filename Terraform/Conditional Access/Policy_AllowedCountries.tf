@@ -5,12 +5,12 @@ resource "azuread_group" "CA_LOC_AllowedCountries_Exclude" {
   security_enabled = true
 }
 
-resource "time_sleep" "wait_CA_MFA_AllUsers_Exclude" {
+resource "time_sleep" "wait_CA_LOC_AllowedCountries_Exclude" {
   depends_on = [azuread_group.CA_MFA_AllUsers_Exclude]
   create_duration = "15s"
 }
 
-resource "azuread_conditional_access_policy" "MFA_AllUsers" {
+resource "azuread_conditional_access_policy" "LOC_AllowedCountries" {
   display_name = "LOC | Allowed Countries"
   state        = "enabledForReportingButNotEnforced"
 
