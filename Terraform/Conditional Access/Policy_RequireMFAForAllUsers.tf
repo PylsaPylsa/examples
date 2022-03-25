@@ -31,7 +31,7 @@ resource "azuread_conditional_access_policy" "MFA_AllUsers" {
     }
 
     users {
-      included_users  = ["All"]
+      included_users  = [variable.includeCAGroup]
       excluded_groups = [azuread_group.CA_MFA_AllUsers_Exclude.id]
     }
   }

@@ -31,7 +31,7 @@ resource "azuread_conditional_access_policy" "LOC_AllowedCountries" {
     }
 
     users {
-      included_users  = ["All"]
+      included_users  = [variable.includeCAGroup]
       excluded_groups = [azuread_group.CA_LOC_AllowedCountries_Exclude.id]
     }
   }

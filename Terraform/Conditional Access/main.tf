@@ -12,7 +12,11 @@ terraform {
 }
 
 provider "azuread" {
-  tenant_id = "e074231f-d031-4f0f-ad84-d72157130967"
 }
 
 data "azuread_client_config" "current" {}
+
+variable "includeCAGroup" {
+  type    = string
+  default = "All"
+}
