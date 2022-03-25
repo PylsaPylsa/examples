@@ -30,7 +30,7 @@ resource "azuread_conditional_access_policy" "SIF_ExternalSSOApps" {
     }
 
     users {
-      included_users  = [variable.includeCAGroup]
+      included_users  = [var.includeCAGroup]
       excluded_groups = [azuread_group.CA_SIF_ExternalSSOApps_Exclude.id]
     }
   }
