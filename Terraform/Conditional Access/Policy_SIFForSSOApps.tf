@@ -6,7 +6,7 @@ resource "azuread_group" "CA_SIF_ExternalSSOApps_Exclude" {
 }
 
 resource "time_sleep" "wait_CA_SIF_ExternalSSOApps_Exclude" {
-  depends_on = [azuread_group.CA_SIF_ExternalSSOApps_Exclude]
+  depends_on      = [azuread_group.CA_SIF_ExternalSSOApps_Exclude]
   create_duration = "15s"
 }
 
