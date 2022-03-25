@@ -6,7 +6,7 @@ resource "azuread_group" "CA_LOC_AllowedCountries_Exclude" {
 }
 
 resource "time_sleep" "wait_CA_LOC_AllowedCountries_Exclude" {
-  depends_on = [azuread_group.CA_LOC_AllowedCountries]
+  depends_on = [azuread_group.CA_LOC_AllowedCountries_Exclude]
   create_duration = "15s"
 }
 
