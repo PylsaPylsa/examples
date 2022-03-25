@@ -12,7 +12,7 @@ resource "time_sleep" "wait_CA_MFA_AllUsers_Exclude" {
 
 resource "azuread_conditional_access_policy" "MFA_AllUsers" {
   display_name = "MFA | All users"
-  state        = "enabledForReportingButNotEnforced"
+  state        = var.CAPolicyState
 
   conditions {
     client_app_types = ["all"]

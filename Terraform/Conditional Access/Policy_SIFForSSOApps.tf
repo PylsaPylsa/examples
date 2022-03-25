@@ -12,7 +12,7 @@ resource "time_sleep" "wait_CA_SIF_ExternalSSOApps_Exclude" {
 
 resource "azuread_conditional_access_policy" "SIF_ExternalSSOApps" {
   display_name = "SIF | External SSO Apps"
-  state        = "enabledForReportingButNotEnforced"
+  state        = var.CAPolicyState
 
   conditions {
     client_app_types = ["all"]

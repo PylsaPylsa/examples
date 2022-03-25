@@ -12,7 +12,7 @@ resource "time_sleep" "wait_CA_LOC_AllowedCountries_Exclude" {
 
 resource "azuread_conditional_access_policy" "LOC_AllowedCountries" {
   display_name = "LOC | Allowed Countries"
-  state        = "enabledForReportingButNotEnforced"
+  state        = var.CAPolicyState
 
   conditions {
     client_app_types = ["all"]
