@@ -15,7 +15,7 @@ resource "azuread_conditional_access_policy" "SIF_ExternalSSOApps" {
   state        = var.CAPolicyState
 
   conditions {
-    client_app_types = ["all"]
+    client_app_types = ["browser"]
 
     applications {
       included_applications = ["All"]
